@@ -4,7 +4,7 @@ package pl.patronage.rszac.Entity;
  * Created by rszac on 17.12.2016.
  */
 public class Actor {
-    private long id;
+    private int id;
     private String name;
     private String surname;
 
@@ -16,11 +16,11 @@ public class Actor {
 
     public Actor(){}
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

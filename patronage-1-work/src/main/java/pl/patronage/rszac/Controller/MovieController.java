@@ -2,8 +2,8 @@ package pl.patronage.rszac.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.patronage.rszac.Entity.Actor;
-import pl.patronage.rszac.Service.ActorService;
+import pl.patronage.rszac.Entity.Movie;
+import pl.patronage.rszac.Service.MovieService;
 
 import java.util.Collection;
 
@@ -11,32 +11,32 @@ import java.util.Collection;
  * Created by rszac on 17.12.2016.
  */
 @RestController
-@RequestMapping("/actors")
-public class ActorController {
+@RequestMapping("/movies")
+public class MovieController {
     @Autowired
-    private ActorService actorService;
+    private MovieService movieService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public Collection<Actor> getAllActors(){
-        return actorService.getAllActors();
+    public Collection<Movie> getAllMovies(){
+        return movieService.getAllMovies();
 
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
-    public Actor getActorById(@PathVariable("id") long id){
-        return this.actorService.getActorById(id);
+    public Movie getMovieById(@PathVariable("id") long id){
+        return this.movieService.getMovieById(id);
     }
     @RequestMapping(value="/{id}", method = RequestMethod.DELETE)
-    public void removeActorById(@PathVariable("id") long id){
-        actorService.removeActorById(id);
+    public void removeMovieById(@PathVariable("id") long id){
+        movieService.removeMovieById(id);
     }
     @RequestMapping(method = RequestMethod.PUT, consumes = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
-    public void updateActor(@RequestBody Actor actor){
-        actorService.updateActor(actor);
+    public void updateMovie(@RequestBody Movie movie){
+        movieService.updateMovie(movie);
     }
     @RequestMapping(method = RequestMethod.POST, consumes = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
-    public void insertActor(@RequestBody Actor actor){
-        actorService.insertActor(actor);
+    public void insertMovie(@RequestBody Movie movie){
+        movieService.insertMovie(movie);
     }
 
 }

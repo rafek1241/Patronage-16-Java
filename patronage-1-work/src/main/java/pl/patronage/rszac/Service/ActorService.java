@@ -24,4 +24,16 @@ public class ActorService {
 //Tu mozna robic badania czy istnieje taki aktor itp itp.
         return this.actorDao.getActorById(id);
     }
+
+    public void removeActorById(long id) {
+        actorDao.removeActorById(id);
+    }
+
+    public void updateActor(Actor actor) {
+        this.actorDao.updateActor(actor);
+    }
+
+    public void insertActor(Actor actor) {
+        this.actorDao.insertActor(actor);
+    }
 }
