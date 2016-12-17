@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>patronage-1-work</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Projekt bazy filmów i aktorów</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

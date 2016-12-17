@@ -8,5 +8,6 @@ public class Patronage1WorkApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Patronage1WorkApplication.class, args);
+		System.out.println("Hello world!");
 	}
 }
