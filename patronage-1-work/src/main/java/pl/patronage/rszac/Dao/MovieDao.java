@@ -1,5 +1,6 @@
 package pl.patronage.rszac.Dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pl.patronage.rszac.Entity.Movie;
 
@@ -13,11 +14,13 @@ import java.util.Map;
 @Repository
 public class MovieDao {
     private static Map<Integer, Movie> movies;
+    @Autowired
+    private ActorDao actorDao;
     static{
     movies = new HashMap<Integer, Movie>() {
         {
        //Wartosci domyslne w poczatkowej BD
-            put(1, new Movie(1, "jan", "kowalski"));
+            put(1, new Movie(1, "Walki psow", ));
         }
     };
     }
@@ -36,6 +39,7 @@ public class MovieDao {
     public void updateMovie(Movie movie) {
     Movie m = movies.get(movie.getId());
     m.setName(movie.getName());
+    m.setActors(movie.getActors());
     }
 
     public void insertMovie(Movie movie) {

@@ -1,5 +1,7 @@
 package pl.patronage.rszac.Entity;
 
+import java.util.Collection;
+
 /**
  * Created by rszac on 17.12.2016.
  */
@@ -7,6 +9,16 @@ public class Actor {
     private int id;
     private String name;
     private String surname;
+
+    private Collection<Movie> movies;
+
+    public Collection<Movie> getMovies() {
+        return movies;
+    }
+
+    public void setMovies(Collection<Movie> movies) {
+        this.movies = movies;
+    }
 
     public Actor(int id, String name, String surname) {
         this.id = id;
