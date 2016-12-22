@@ -11,11 +11,11 @@ Aplikacja bazy filmów i aktorów wykonana w Javie za pomocą Spring-boot.
 
 ./actors/{id} - wyświetla aktora o ID
 
-./movies/{id}/addActor/{idA} - dodaje do filmu ID  jednego aktora (obsada)
+./movies/{id}/addActor/{idA} - dodaje do filmu ID  jednego aktora (obsada) - Metoda GET
 
-./movies/{id}/addActors - dodaje kilku aktorow do filmu.
+./movies/{id}/addActors - dodaje kilku aktorow do filmu. - Metoda POST
 
-./movies/{id}/remActor/{idA} - usuwa aktora z filmu (z obsady)
+./movies/{id}/remActor/{idA} - usuwa aktora z filmu (z obsady) 
 
 Request POST - dodawanie filmów/aktorów.
 
