@@ -10,15 +10,6 @@ public class Actor {
     private String name;
     private String surname;
 
-    private Collection<Movie> movies;
-
-    public Collection<Movie> getMovies() {
-        return movies;
-    }
-
-    public void setMovies(Collection<Movie> movies) {
-        this.movies = movies;
-    }
 
     public Actor(int id, String name, String surname) {
         this.id = id;
