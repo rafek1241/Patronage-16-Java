@@ -3,7 +3,10 @@ package pl.patronage.rszac.Entity;
 import jdk.nashorn.internal.ir.annotations.Reference;
 
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by rszac on 17.12.2016.
@@ -12,23 +15,27 @@ import java.util.Collection;
 public class Movie {
     private int id;
     private String name;
-    @OneToMany(mappedBy = "actors")
-    private Collection<Actor> actors;
+    private List<Actor> actors;
 
-    public Movie(int id, String name, Collection<Actor> list) {
+    public Movie(int id, String name, List<Actor> list) {
         this.id = id;
         this.name = name;
         this.actors = list;
     }
 
     public Movie(){}
+    public Movie(int id, String name){
+        this.id=id;
+        this.name=name;
+        this.actors= new ArrayList<Actor>();
+    }
 
-    public void setActors(Collection<Actor> list){
+    public void setActors(List<Actor> list){
     this.actors = list;
     }
 
 
-    public Collection<Actor> getActors() {
+    public List<Actor> getActors() {
         return actors;
     }
 
