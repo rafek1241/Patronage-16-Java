@@ -6,8 +6,8 @@ import pl.patronage.rszac.Dao.MovieDao;
 import pl.patronage.rszac.Entity.Actor;
 import pl.patronage.rszac.Entity.Movie;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedHashSet;
 
 /**
  * Created by rszac on 17.12.2016.
@@ -16,6 +16,7 @@ import java.util.Collection;
 public class MovieService {
     @Autowired
     private MovieDao movieDao;
+
     public Movie getMovieById(long id) {
         return this.movieDao.getMovieById(id);
     }
@@ -28,12 +29,12 @@ public class MovieService {
         this.movieDao.removeMovieById(id);
     }
 
-    public void setActorToMovieById(int IdAct, int IdMovie){
-        this.movieDao.setActorToMovieById(IdAct,IdMovie);
+    public void setActorToMovieById(int IdAct, int IdMovie) {
+        this.movieDao.setActorToMovieById(IdAct, IdMovie);
     }
 
     public void remActorFromMovieById(int IdAct, int IdMov) {
-    this.movieDao.remActorFromMovieById(IdAct,IdMov);
+        this.movieDao.remActorFromMovieById(IdAct, IdMov);
     }
 
 
@@ -45,7 +46,7 @@ public class MovieService {
         this.movieDao.insertMovie(movie);
     }
 
-    public void insertActorsToMovie(ArrayList<Actor> list, int idMov) {
+    public void insertActorsToMovie(LinkedHashSet<Actor> list, int idMov) {
         this.movieDao.insertActorsToMovie(list, idMov);
     }
 }

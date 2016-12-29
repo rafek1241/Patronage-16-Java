@@ -7,20 +7,22 @@ import pl.patronage.rszac.Entity.Movie;
 
 import java.util.*;
 
+
 /**
  * Created by rszac on 17.12.2016.
  */
 @Repository
 public class MovieDao {
     private static Map<Integer, Movie> movies;
-    static{
-        movies= new HashMap<Integer, Movie>(){
+
+    static {
+        movies = new HashMap<Integer, Movie>() {
 
 
             {
-                put(1,new Movie(1,"Przeminelo z wiatrem"));
-                put(2,new Movie(2,"Droga do nikad"));
-                put(3,new Movie(3,"Esencja życia"));
+                put(1, new Movie(1, "Przeminelo z wiatrem"));
+                put(2, new Movie(2, "Droga do nikad"));
+                put(3, new Movie(3, "Esencja życia"));
             }
         };
 
@@ -35,18 +37,20 @@ public class MovieDao {
     }
 
 
-    public void setActorToMovieById(int IdAct, int IdMovie){
+    public void setActorToMovieById(int IdAct, int IdMovie) {
         Actor a1 = actorDao.getActorById(IdAct);
         Movie m1 = movies.get(IdMovie);
-        List<Actor> t1 = m1.getActors();
-        if(!t1.contains(a1))
-        t1.add(a1);
+        Set<Actor> t1 = m1.getActors();
+        if (!t1.contains(a1))
+            t1.add(a1);
+
     }
-    public void remActorFromMovieById(int IdAct, int IdMov){
+
+    public void remActorFromMovieById(int IdAct, int IdMov) {
         Actor a1 = actorDao.getActorById(IdAct);
         Movie m1 = movies.get(IdMov);
-        List<Actor> t1 = m1.getActors();
-        if(t1.contains(a1))
+        Set<Actor> t1 = m1.getActors();
+        if (t1.contains(a1))
             t1.remove(a1);
     }
 
@@ -59,20 +63,20 @@ public class MovieDao {
     }
 
     public void updateMovie(Movie movie) {
-    Movie m = movies.get(movie.getId());
-    m.setName(movie.getName());
-    m.setActors(movie.getActors());
+        Movie m = movies.get(movie.getId());
+        m.setName(movie.getName());
+        m.setActors(movie.getActors());
     }
 
     public void insertMovie(Movie movie) {
-        this.movies.put(movie.getId(),movie);
+        movies.put(movie.getId(), movie);
     }
 
-    public void insertActorsToMovie(ArrayList<Actor> list, int idMov) {
-        Movie m= movies.get(idMov);
-        List<Actor> t1 = m.getActors();
-        for (Actor a:list){
-            if(!t1.contains(a))
+    public void insertActorsToMovie(LinkedHashSet<Actor> list, int idMov) {
+        Movie m = movies.get(idMov);
+        Set<Actor> t1 = m.getActors();
+        for (Actor a : list) {
+            if (!t1.contains(a))
                 t1.add(a);
         }
     }

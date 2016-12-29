@@ -15,12 +15,12 @@ public class ActorService {
     @Autowired
     private ActorDao actorDao;
 
-    public Collection<Actor> getAllActors(){
+    public Collection<Actor> getAllActors() {
         return this.actorDao.getAllActors();
 
     }
 
-    public Actor getActorById(long id){
+    public Actor getActorById(long id) {
 //Tu mozna robic badania czy istnieje taki aktor itp itp.
         return this.actorDao.getActorById(id);
     }
