@@ -10,20 +10,21 @@ import java.util.*;
 
 @Repository
 public class MovieDao {
-    private static Map<Integer, Movie> movies;
-
-    static {
-        movies = new HashMap<Integer, Movie>() {
+    private static Map<Integer, Movie> movies = new HashMap<>();
 
 
-            {
-                put(1, new Movie(1, "Przeminelo z wiatrem"));
-                put(2, new Movie(2, "Droga do nikad"));
-                put(3, new Movie(3, "Esencja życia"));
-            }
-        };
-
-    }
+//    static {
+//        movies = new HashMap<Integer, Movie>() {
+//
+//
+//            {
+//                put(1, new Movie(1, "Przeminelo z wiatrem"));
+//                put(2, new Movie(2, "Droga do nikad"));
+//                put(3, new Movie(3, "Esencja życia"));
+//            }
+//        };
+//
+//    }
 
     @Autowired
     private ActorDao actorDao;
@@ -35,6 +36,7 @@ public class MovieDao {
 
 
     public void setActorToMovieById(int IdAct, int IdMovie) {
+        actorDao = new ActorDao();
         Actor a1 = actorDao.getActorById(IdAct);
         Movie m1 = movies.get(IdMovie);
         Set<Actor> t1 = m1.getActors();
@@ -44,6 +46,7 @@ public class MovieDao {
     }
 
     public void remActorFromMovieById(int IdAct, int IdMov) {
+        actorDao = new ActorDao();
         Actor a1 = actorDao.getActorById(IdAct);
         Movie m1 = movies.get(IdMov);
         Set<Actor> t1 = m1.getActors();
