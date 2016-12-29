@@ -17,6 +17,7 @@ This is an application for managing actors and movies. We can manipulate objects
 	*	/pl.patronage.rszac/Entity
 	*	/pl.patronage.rszac/Service
 	*/src/test/java
+	*	/pl.patronage.rszac.Dao
 ```
 
 ##Technologies used:
@@ -187,4 +188,4 @@ This is an application for managing actors and movies. We can manipulate objects
 - [x] Add objects to list (1 or all)
 - [x] Remove object from list (1)
 - [x] Update any objects existing in list
-- [ ] Unit tests (JUnit)
+- [x] Unit tests (JUnit)
