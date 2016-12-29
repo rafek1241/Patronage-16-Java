@@ -9,9 +9,6 @@ import pl.patronage.rszac.Service.MovieService;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 
-/**
- * Created by rszac on 17.12.2016.
- */
 @RestController
 @RequestMapping("/movies")
 public class MovieController {

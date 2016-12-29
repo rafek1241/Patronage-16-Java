@@ -1,9 +1,6 @@
 package pl.patronage.rszac.Entity;
 
 
-/**
- * Actor entity
- */
 public class Actor {
     private int id;
     private String name;

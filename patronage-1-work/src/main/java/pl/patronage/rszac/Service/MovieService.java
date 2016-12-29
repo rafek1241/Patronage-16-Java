@@ -9,9 +9,6 @@ import pl.patronage.rszac.Entity.Movie;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 
-/**
- * Created by rszac on 17.12.2016.
- */
 @Service
 public class MovieService {
     @Autowired

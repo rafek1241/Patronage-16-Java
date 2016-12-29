@@ -8,9 +8,6 @@ import pl.patronage.rszac.Entity.Movie;
 import java.util.*;
 
 
-/**
- * Created by rszac on 17.12.2016.
- */
 @Repository
 public class MovieDao {
     private static Map<Integer, Movie> movies;

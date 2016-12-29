@@ -7,9 +7,6 @@ import pl.patronage.rszac.Entity.Actor;
 
 import java.util.Collection;
 
-/**
- * Created by rszac on 17.12.2016.
- */
 @Service
 public class ActorService {
     @Autowired
@@ -21,7 +18,6 @@ public class ActorService {
     }
 
     public Actor getActorById(long id) {
-//Tu mozna robic badania czy istnieje taki aktor itp itp.
         return this.actorDao.getActorById(id);
     }
 

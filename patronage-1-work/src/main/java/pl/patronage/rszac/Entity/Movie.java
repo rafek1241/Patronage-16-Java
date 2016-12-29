@@ -4,9 +4,6 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 
-/**
- * Created by rszac on 17.12.2016.
- */
 
 public class Movie {
     private int id;

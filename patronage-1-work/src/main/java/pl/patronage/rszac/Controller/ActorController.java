@@ -7,9 +7,6 @@ import pl.patronage.rszac.Service.ActorService;
 
 import java.util.Collection;
 
-/**
- * Actor controller
- */
 @RestController
 @RequestMapping("/actors")
 public class ActorController {
