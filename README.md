@@ -1,28 +1,166 @@
 # Patronage-16-Java
+## Introduction
 
-REST - API 
-Aplikacja bazy filmów i aktorów wykonana w Javie za pomocą Spring-boot.
+This is an application for managing actors and movies. We can manipulate objects in following way:
+	* Display any objects (1 or all)
+	* Add objects to list (1 or all)
+	* Remove object from list (1)
+	* Update any objects existing in list
 
-./movies - wyświetla wszystkie filmy w BD
+##Technologies used:
+1) Build: Maven
+2) Web Services Framework: Spring Boot
+5) Testing: JUnit
 
-./actors - wyświetla wszystkich aktorów w BD
+##Steps to run:
+1) mvn clean package (in project folder)
 
-./movies/{id} - wyświetla film o ID
+2a) java -jar target/patronage-1-work-0.0.1-SNAPSHOT.jar
 
-./actors/{id} - wyświetla aktora o ID
+2b) mvn spring-boot:run (in project folder)
 
-./movies/{id}/addActor/{idA} - dodaje do filmu ID  jednego aktora (obsada) - Metoda GET
+**Project have been setup at `http://localhost:8080`**
 
-./movies/{id}/addActors - dodaje kilku aktorow do filmu. - Metoda POST
+##Requests
 
-./movies/{id}/remActor/{idA} - usuwa aktora z filmu (z obsady) 
+###Actors
+```diff
+> GET
+```
+>**`/actors`** - return list of actors
+>
+> Response fields:
+>- id
+>- name 
+>- surname
 
-Request POST - dodawanie filmów/aktorów.
+</n> 
 
-Request PUT - aktualizacja istniejących rekordów.
+>**`/actors/{id}`** - return/find actor by id
+>
+> Response fields:
+>- id
+>- name 
+>- surname
 
-Request DELETE - usuwanie
+</n> 
 
-Request GET - Wyszukanie/wyświetlanie znalezionych.
+```diff
+> POST
+```
+>**`/actors`** - add new actor or actors
+>
+>	Header: `Content-Type:application/json`
+>
+>  Fields:
+>- id
+>- name 
+>- surname
+>
+> Response fields
+>- id
+>- name
+>- surname
+
+</n> 
+
+```diff
+> DELETE
+```
+>**`/actors/{id}`** - delete actor by id
+
+</n> 
+
+```diff
+> PUT
+```
+>**`/actors/{id}`** - update actor by id
+>
+>	Header: `Content-Type:application/json`
+>
+>  Fields:
+>- name 
+>- surname
+>
+
+</n> 
+
+###Movies
+```diff
+> GET
+```
+>**`/movies`** - return list of movies
+>
+> Response fields:
+>- id
+>- name 
+>- actors
+
+</n>  
+
+>**`/movies/{id}`** - return/find movie by id
+>
+> Response fields:
+>- id
+>- name
+>- actors
+
+</n> 
+
+>**`/movies/{id}/addActor/{idA}`** - add actor with idA to movie with id
+
+</n> 
+
+```diff
+> POST
+```
+>**`/movies`** - add new movie
+>
+>	Header: `Content-Type:application/json`
+>
+>  Fields:
+>- id
+>- name
+>- actors
+>
+> Response fields
+>- id
+>- name
+>- actors
+
+</n> 
 
 
+>**`/movies/addActors`** - add list of actors to the movie
+>
+>	Header: `Content-Type:application/json`
+>
+>  Fields:
+>- list of actors
+>- id of movie
+
+</n>
+
+```diff
+> DELETE
+```
+>**`/movies/{id}`** - delete movie by id
+
+</n> 
+
+>**`/movies/{id}/remActor/{idA}`** - remove actor with idA from movie with id
+
+</n>
+
+```diff
+> PUT
+```
+>**`/movies/{id}`** - update movie by id
+>
+>	Header: `Content-Type:application/json`
+>
+>  Fields:
+>- name
+>- actors
+
+</n> 
