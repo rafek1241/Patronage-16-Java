@@ -8,6 +8,17 @@ This is an application for managing actors and movies. We can manipulate objects
 * Remove object from list (1)
 * Update any objects existing in list
 
+## Structure of project
+```
+	*src/main/java
+	*	/pl.patronage.rszac
+	*	/pl.patronage.rszac/Controller
+	*	/pl.patronage.rszac/Dao
+	*	/pl.patronage.rszac/Entity
+	*	/pl.patronage.rszac/Service
+	*/src/test/java
+```
+
 ##Technologies used:
 
 1) Build: Maven
