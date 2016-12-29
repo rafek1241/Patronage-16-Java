@@ -2,22 +2,27 @@
 ## Introduction
 
 This is an application for managing actors and movies. We can manipulate objects in following way:
-	* Display any objects (1 or all)
-	* Add objects to list (1 or all)
-	* Remove object from list (1)
-	* Update any objects existing in list
+
+* Display any objects (1 or all)
+* Add objects to list (1 or all)
+* Remove object from list (1)
+* Update any objects existing in list
 
 ##Technologies used:
+
 1) Build: Maven
-2) Web Services Framework: Spring Boot
-5) Testing: JUnit
+
+2) Web Services Framework: Spring Boot Starter
+
+3) Testing: JUnit
 
 ##Steps to run:
+
 1) mvn clean package (in project folder)
 
-2a) java -jar target/patronage-1-work-0.0.1-SNAPSHOT.jar
-
-2b) mvn spring-boot:run (in project folder)
+2)
+ * java -jar target/patronage-1-work-0.0.1-SNAPSHOT.jar
+ * mvn spring-boot:run (in project folder)
 
 **Project have been setup at `http://localhost:8080`**
 
