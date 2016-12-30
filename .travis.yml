@@ -1,3 +1,4 @@
 language: java
-script: cd patronage-1-work
-mvn test
+script: 
+    - cd patronage-1-work
+    - mvn test
