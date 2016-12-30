@@ -26,7 +26,7 @@ This is an application for managing actors and movies. We can manipulate objects
 
 2) Web Services Framework: Spring Boot Starter
 
-3) Testing: JUnit
+3) Testing: JUnit & Travis [![Build Status](https://travis-ci.org/rafek1241/Patronage-16-Java.svg?branch=Workflow-Rszac)](https://travis-ci.org/rafek1241/Patronage-16-Java)
 
 ##Steps to run:
 
